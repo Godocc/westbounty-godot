@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://bw3dt6to42mor"]
 
-[ext_resource type="Script" uid="uid://4img3bmrulvx" path="res://Scripts/character_body_2d.gd" id="1_3smsa"]
+[ext_resource type="Script" uid="uid://c0rkkuq38lky" path="res://Scripts/player.gd" id="1_3smsa"]
 [ext_resource type="Texture2D" uid="uid://3une6raaobts" path="res://Assets/Sprites/Player/idle/cowboy_idle_up_spritesheet.png" id="2_8erm5"]
 [ext_resource type="Texture2D" uid="uid://c3detaicfc7ip" path="res://Assets/Sprites/Player/walk/cowboy_walk_up_spritesheet.png" id="3_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://d3mlexv6h226g" path="res://Assets/Sprites/Player/idle/cowboy_idle_spritesheet.png" id="4_tx1dd"]
@@ -212,7 +212,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6ct3r"]
 size = Vector2(6, 4)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 3
 script = ExtResource("1_3smsa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -220,6 +221,7 @@ y_sort_enabled = true
 position = Vector2(0, -4)
 sprite_frames = SubResource("SpriteFrames_qp52p")
 animation = &"front idle"
+frame_progress = 0.462262
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_6ct3r")
